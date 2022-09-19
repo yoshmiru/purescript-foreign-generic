@@ -95,10 +95,13 @@ instance eqTree :: Eq a => Eq (Tree a) where
   eq x y = genericEq x y
 
 instance decodeTree :: Decode a => Decode (Tree a) where
-  decode x = genericDecode defaultOptions x
+  decode tree = decode tree
 
 instance encodeTree :: Encode a => Encode (Tree a) where
-  encode x = genericEncode defaultOptions x
+  --encode x = genericEncode defaultOptions x
+  encode tree = case tree of
+    Leaf x -> unsafeToForeign (encode x)
+    Branch child -> encode child
 
 newtype UndefinedTest = UndefinedTest
   { a :: Maybe String
