@@ -13,8 +13,8 @@ to generate this file without the comments in this block.
 { name = "foreign-generic"
 , dependencies =
   [ "arrays"
-  , "bifunctors"
   , "assert"
+  , "bifunctors"
   , "console"
   , "control"
   , "effect"
