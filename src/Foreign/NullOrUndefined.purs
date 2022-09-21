@@ -10,6 +10,12 @@ readNullOrUndefined :: forall a. (Foreign -> F a) -> Foreign -> F (Maybe a)
 readNullOrUndefined _ value | isNull value || isUndefined value = pure Nothing
 readNullOrUndefined f value = Just <$> f value
 
-foreign import undefined :: Foreign
+foreign import undefined_ :: Foreign
 
-foreign import null :: Foreign
+foreign import null_ :: Foreign
+
+null :: Foreign
+null = null_
+
+undefined :: Foreign
+undefined = undefined_
