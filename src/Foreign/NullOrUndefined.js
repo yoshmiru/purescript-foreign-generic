@@ -1,3 +1,3 @@
-export null;
+export const null_ = null;
 
-export undefined;
+export const undefined_ = undefined;
