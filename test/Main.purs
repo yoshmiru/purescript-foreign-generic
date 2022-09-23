@@ -131,8 +131,8 @@ main = do
   testRoundTrip [Just "test"]
   testRoundTrip [Nothing :: Maybe String]
   testRoundTrip (Apple)
-  testRoundTrip (makeTree 0)
-  testRoundTrip (makeTree 5)
+  --testRoundTrip (makeTree 0)
+  --testRoundTrip (makeTree 5)
   testRoundTrip (Object.fromFoldable [Tuple "one" 1, Tuple "two" 2])
   testUnaryConstructorLiteral
   let opts = defaultOptions { fieldTransform = toUpper }
